@@ -1,0 +1,207 @@
+/**
+ * Rêveoulé Skincare & Beauty Inc.
+ * Global Styles - Luxury Brand Foundation
+ */
+
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-light-gray: #E6E6E6;
+  --color-warm-beige: #E5DED6;
+  --color-deep-crimson: #59090C;
+  --color-dark-ruby: #370506;
+  --color-near-black: #1A0202;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-button: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 64px;
+  --spacing-xxl: 96px;
+  --spacing-xxxl: 128px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-near-black);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--color-deep-crimson);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-near-black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-deep-crimson);
+}
+
+button {
+  font-family: var(--font-button);
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-deep-crimson);
+  outline-offset: 2px;
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Loading state */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-light-gray) 0%,
+    var(--color-warm-beige) 50%,
+    var(--color-light-gray) 100%
+  );
+  background-size: 1000px 100%;
+}

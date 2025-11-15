@@ -1,0 +1,9 @@
+/**
+ * Main Entry Point
+ * Rêveoulé Skincare & Beauty Inc.
+ */
+
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
+
+createRoot(document.getElementById('root')).render(<App />);

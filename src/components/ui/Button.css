@@ -1,0 +1,121 @@
+/**
+ * Button Component Styles
+ * Luxury brand button with strict design adherence
+ */
+
+.luxury-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-button);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Variant - Deep Crimson */
+.luxury-button--primary {
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+  border: 2px solid var(--color-deep-crimson);
+}
+
+.luxury-button--primary:hover:not(:disabled) {
+  background-color: var(--color-dark-ruby);
+  border-color: var(--color-dark-ruby);
+  box-shadow: 0 4px 16px rgba(89, 9, 12, 0.2);
+}
+
+.luxury-button--primary:active:not(:disabled) {
+  background-color: var(--color-near-black);
+  border-color: var(--color-near-black);
+}
+
+/* Secondary Variant - White with Deep Red Border */
+.luxury-button--secondary {
+  background-color: var(--color-white);
+  color: var(--color-deep-crimson);
+  border: 2px solid var(--color-deep-crimson);
+}
+
+.luxury-button--secondary:hover:not(:disabled) {
+  background-color: var(--color-warm-beige);
+  border-color: var(--color-dark-ruby);
+  color: var(--color-dark-ruby);
+}
+
+.luxury-button--secondary:active:not(:disabled) {
+  background-color: var(--color-light-gray);
+}
+
+/* Tertiary Variant - Minimal */
+.luxury-button--tertiary {
+  background-color: transparent;
+  color: var(--color-deep-crimson);
+  border: 2px solid transparent;
+}
+
+.luxury-button--tertiary:hover:not(:disabled) {
+  color: var(--color-dark-ruby);
+  border-color: var(--color-light-gray);
+}
+
+/* Size Variants */
+.luxury-button--small {
+  padding: 12px 24px;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.luxury-button--medium {
+  padding: 16px 40px;
+  font-size: 14px;
+}
+
+.luxury-button--large {
+  padding: 20px 56px;
+  font-size: 15px;
+}
+
+/* Text wrapper for smooth transitions */
+.luxury-button__text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Focus state for accessibility */
+.luxury-button:focus-visible {
+  outline: 2px solid var(--color-deep-crimson);
+  outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .luxury-button--small {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .luxury-button--medium {
+    padding: 14px 32px;
+    font-size: 13px;
+  }
+
+  .luxury-button--large {
+    padding: 16px 40px;
+    font-size: 14px;
+  }
+}

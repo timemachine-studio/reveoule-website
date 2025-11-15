@@ -1,0 +1,222 @@
+/**
+ * Category Grid Section Styles
+ * Luxury product category presentation
+ */
+
+.category-grid {
+  padding: var(--spacing-xxxl) 0;
+  background-color: var(--color-light-gray);
+}
+
+.category-grid__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Header */
+.category-grid__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.category-grid__eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.category-grid__title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.category-grid__description {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--color-near-black);
+  opacity: 0.8;
+}
+
+/* Grid */
+.category-grid__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .category-grid__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-grid__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Category Card */
+.category-card {
+  position: relative;
+  display: block;
+  min-height: 280px;
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid var(--color-light-gray);
+  transition: all var(--transition-base);
+  background-color: var(--color-white);
+}
+
+.category-card--featured {
+  background: linear-gradient(
+    135deg,
+    var(--color-warm-beige) 0%,
+    var(--color-white) 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .category-card--featured {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-card--featured:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: auto;
+  }
+}
+
+.category-card:hover {
+  box-shadow: 0 12px 32px rgba(26, 2, 2, 0.12);
+  border-color: var(--color-warm-beige);
+}
+
+/* Background */
+.category-card__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.category-card:hover .category-card__background {
+  opacity: 1;
+}
+
+.category-card__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(89, 9, 12, 0.05) 0%,
+    rgba(55, 5, 6, 0.08) 100%
+  );
+}
+
+/* Content */
+.category-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  height: 100%;
+}
+
+.category-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.category-card__name {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.category-card__count {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-near-black);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category-card__description {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-near-black);
+  margin: 0;
+  flex: 1;
+}
+
+/* Arrow */
+.category-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+  border-radius: 2px;
+  margin-top: auto;
+  transition: all var(--transition-base);
+}
+
+.category-card:hover .category-card__arrow {
+  background-color: var(--color-dark-ruby);
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .category-grid {
+    padding: var(--spacing-xxl) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-grid {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .category-grid__description {
+    font-size: 16px;
+  }
+
+  .category-card {
+    min-height: 240px;
+  }
+
+  .category-card__name {
+    font-size: clamp(24px, 5vw, 28px);
+  }
+}

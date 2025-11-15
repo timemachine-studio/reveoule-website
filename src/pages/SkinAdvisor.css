@@ -1,0 +1,142 @@
+/**
+ * Skin Advisor Page Styles
+ */
+
+.skin-advisor-page {
+  background-color: var(--color-white);
+}
+
+/* Hero Section */
+.skin-advisor-hero {
+  padding: calc(var(--spacing-xxl) + 80px) 0 var(--spacing-xl);
+  background: linear-gradient(
+    135deg,
+    var(--color-white) 0%,
+    var(--color-warm-beige) 100%
+  );
+  text-align: center;
+}
+
+.skin-advisor-hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skin-advisor-hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.skin-advisor-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 700;
+  color: var(--color-deep-crimson);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.skin-advisor-hero__description {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--color-near-black);
+  opacity: 0.8;
+}
+
+/* Information Section */
+.skin-advisor-info {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-white);
+}
+
+.skin-advisor-info__content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skin-advisor-info__title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.skin-advisor-info__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .skin-advisor-info__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+.skin-advisor-info__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-light-gray);
+  border-radius: 4px;
+}
+
+.skin-advisor-info__number {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.skin-advisor-info__step-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-deep-crimson);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.01em;
+}
+
+.skin-advisor-info__step-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-near-black);
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skin-advisor-hero {
+    padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
+  }
+
+  .skin-advisor-hero__description {
+    font-size: 16px;
+  }
+
+  .skin-advisor-info {
+    padding: var(--spacing-xl) 0;
+  }
+}
