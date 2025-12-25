@@ -11,6 +11,7 @@ import './Navigation.css';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,11 +28,15 @@ const Navigation = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
-    { name: 'AI Skin Advisor', path: '/skin-advisor' },
-    { name: 'About', path: '/about' },
+    { name: 'Plans', path: '/plans' },
+    { name: 'Resources', path: '/about', hasDropdown: true },
+  ];
+
+  const resourceLinks = [
+    { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
+    { name: 'AI Skin Advisor', path: '/skin-advisor' },
   ];
 
   return (
@@ -52,17 +57,68 @@ const Navigation = () => {
         <ul className="navigation__links">
           {navLinks.map((link) => (
             <li key={link.path} className="navigation__item">
-              <Link
-                to={link.path}
-                className={`navigation__link ${
-                  location.pathname === link.path ? 'navigation__link--active' : ''
-                }`}
-              >
-                {link.name}
-              </Link>
+              {link.hasDropdown ? (
+                <div
+                  className="navigation__dropdown"
+                  onMouseEnter={() => setIsResourcesOpen(true)}
+                  onMouseLeave={() => setIsResourcesOpen(false)}
+                >
+                  <button className="navigation__link navigation__link--dropdown">
+                    {link.name}
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                      <path d="M6 8L2 4h8l-4 4z"/>
+                    </svg>
+                  </button>
+                  <AnimatePresence>
+                    {isResourcesOpen && (
+                      <motion.div
+                        className="navigation__dropdown-menu"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {resourceLinks.map((resource) => (
+                          <Link
+                            key={resource.path}
+                            to={resource.path}
+                            className="navigation__dropdown-link"
+                          >
+                            {resource.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  to={link.path}
+                  className={`navigation__link ${
+                    location.pathname === link.path ? 'navigation__link--active' : ''
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
+
+        {/* Auth Buttons */}
+        <div className="navigation__actions">
+          <Link to="/affiliate" className="navigation__action-link">
+            Become an Affiliate
+          </Link>
+          <button className="navigation__globe">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <circle cx="10" cy="10" r="8" strokeWidth="1.5"/>
+              <path d="M2 10h16M10 2a8 8 0 018 8 8 8 0 01-8 8" strokeWidth="1.5"/>
+            </svg>
+          </button>
+          <Link to="/signin" className="navigation__signin">Sign in</Link>
+          <Link to="/join" className="navigation__join-btn">Join</Link>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button

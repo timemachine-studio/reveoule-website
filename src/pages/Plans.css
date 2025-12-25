@@ -1,0 +1,18 @@
+.plans-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.plans-hero {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--color-warm-beige), var(--color-light-gray));
+  text-align: center;
+}
+
+.plans-hero h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.plans-content {
+  padding: var(--spacing-xxl) 0;
+}
