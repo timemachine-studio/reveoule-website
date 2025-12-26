@@ -18,9 +18,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 50%,
-    var(--color-near-black) 100%
+    var(--color-white) 0%,
+    var(--color-warm-beige) 50%,
+    var(--color-light-gray) 100%
   );
   z-index: 0;
 }
@@ -30,9 +30,9 @@
   inset: 0;
   background: radial-gradient(
     circle at 30% 50%,
-    rgba(89, 9, 12, 0.8) 0%,
-    rgba(55, 5, 6, 0.9) 50%,
-    rgba(26, 2, 2, 1) 100%
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(229, 222, 214, 0.9) 50%,
+    rgba(230, 230, 230, 1) 100%
   );
 }
 
@@ -63,7 +63,7 @@
   font-family: var(--font-heading);
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   line-height: 1.15;
   letter-spacing: -0.02em;
   max-width: 700px;
@@ -81,17 +81,17 @@
   font-size: 15px;
   font-weight: 500;
   color: var(--color-white);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--color-deep-crimson);
+  border: 1px solid var(--color-deep-crimson);
   border-radius: 30px;
   padding: 12px 24px;
   cursor: pointer;
   transition: all var(--transition-base);
-  backdrop-filter: blur(10px);
 }
 
 .hero__tab:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-dark-ruby);
+  border-color: var(--color-dark-ruby);
   transform: translateY(-2px);
 }
 
@@ -491,7 +491,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-deep-crimson);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
