@@ -16,14 +16,24 @@
 .hero__background {
   position: absolute;
   inset: 0;
-  background: var(--color-white);
+  background: linear-gradient(
+    135deg,
+    var(--color-deep-crimson) 0%,
+    var(--color-dark-ruby) 50%,
+    var(--color-near-black) 100%
+  );
   z-index: 0;
 }
 
 .hero__gradient {
   position: absolute;
   inset: 0;
-  background: transparent;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(89, 9, 12, 0.8) 0%,
+    rgba(55, 5, 6, 0.9) 50%,
+    rgba(26, 2, 2, 1) 100%
+  );
 }
 
 .hero__container {
@@ -53,7 +63,7 @@
   font-family: var(--font-heading);
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 600;
-  color: var(--color-deep-crimson);
+  color: var(--color-white);
   line-height: 1.15;
   letter-spacing: -0.02em;
   max-width: 700px;
@@ -71,17 +81,17 @@
   font-size: 15px;
   font-weight: 500;
   color: var(--color-white);
-  background-color: var(--color-deep-crimson);
-  border: 1px solid var(--color-deep-crimson);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   padding: 12px 24px;
   cursor: pointer;
   transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
 }
 
 .hero__tab:hover {
-  background-color: var(--color-dark-ruby);
-  border-color: var(--color-dark-ruby);
+  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
@@ -93,10 +103,10 @@
 
 /* Card */
 .hero__card {
-  background-color: var(--color-deep-crimson);
+  background-color: var(--color-white);
   border-radius: 16px;
   padding: var(--spacing-lg);
-  box-shadow: 0 20px 60px rgba(89, 9, 12, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   max-width: 900px;
 }
 
@@ -139,7 +149,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-near-black);
   letter-spacing: 0.02em;
 }
 
@@ -153,9 +163,9 @@
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-deep-crimson);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-near-black);
+  background-color: var(--color-light-gray);
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
@@ -164,22 +174,21 @@
 
 .hero__option-btn:hover {
   background-color: var(--color-warm-beige);
-  border-color: var(--color-white);
+  border-color: var(--color-deep-crimson);
 }
 
 .hero__option-btn--selected {
-  background-color: var(--color-white);
-  color: var(--color-deep-crimson);
-  border-color: var(--color-white);
-  font-weight: 600;
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+  border-color: var(--color-deep-crimson);
 }
 
 .hero__text-input {
   font-family: var(--font-body);
   font-size: 16px;
-  color: var(--color-deep-crimson);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-near-black);
+  background-color: var(--color-light-gray);
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: var(--spacing-sm) var(--spacing-md);
   transition: all var(--transition-base);
@@ -189,21 +198,20 @@
 
 .hero__text-input:focus {
   outline: none;
-  border-color: var(--color-white);
+  border-color: var(--color-deep-crimson);
   background-color: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
 .hero__text-input::placeholder {
-  color: rgba(89, 9, 12, 0.5);
+  color: rgba(26, 2, 2, 0.5);
 }
 
 .hero__textarea {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--color-deep-crimson);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-near-black);
+  background-color: var(--color-light-gray);
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: var(--spacing-sm);
   resize: vertical;
@@ -213,22 +221,21 @@
 
 .hero__textarea:focus {
   outline: none;
-  border-color: var(--color-white);
+  border-color: var(--color-deep-crimson);
   background-color: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
 .hero__textarea::placeholder {
-  color: rgba(89, 9, 12, 0.5);
+  color: rgba(26, 2, 2, 0.5);
 }
 
 .hero__submit-btn {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-deep-crimson);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-deep-crimson);
+  border: none;
   border-radius: 8px;
   padding: 16px 32px;
   cursor: pointer;
@@ -237,10 +244,9 @@
 }
 
 .hero__submit-btn:hover:not(:disabled) {
-  background-color: var(--color-warm-beige);
-  border-color: var(--color-white);
+  background-color: var(--color-dark-ruby);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(89, 9, 12, 0.4);
 }
 
 .hero__submit-btn:disabled {
@@ -249,16 +255,15 @@
 }
 
 .hero__submit-btn--secondary {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
-  border-color: var(--color-white);
+  background-color: var(--color-light-gray);
+  color: var(--color-near-black);
   margin-top: var(--spacing-md);
 }
 
 .hero__submit-btn--secondary:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-warm-beige);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(26, 2, 2, 0.15);
 }
 
 /* Results */
@@ -271,23 +276,22 @@
   font-family: var(--font-heading);
   font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
 }
 
 .hero__results-content {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-warm-beige);
   border-radius: 12px;
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero__results-content p {
   white-space: pre-wrap;
   line-height: 1.8;
-  color: var(--color-white);
+  color: var(--color-near-black);
 }
 
 /* Branding */
@@ -296,7 +300,7 @@
   align-items: center;
   gap: 8px;
   padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--color-light-gray);
   margin-top: var(--spacing-sm);
 }
 
@@ -304,14 +308,14 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(26, 2, 2, 0.6);
 }
 
 .hero__branding-logo {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   letter-spacing: -0.01em;
 }
 
@@ -327,21 +331,20 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  background-color: var(--color-light-gray);
+  border: 2px solid transparent;
   border-radius: 12px;
   padding: var(--spacing-sm) var(--spacing-md);
   transition: all var(--transition-base);
 }
 
 .hero__search-container:focus-within {
-  border-color: var(--color-white);
+  border-color: var(--color-deep-crimson);
   background-color: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
 .hero__search-icon {
-  color: var(--color-deep-crimson);
+  color: var(--color-near-black);
   opacity: 0.5;
   flex-shrink: 0;
 }
@@ -350,14 +353,14 @@
   flex: 1;
   font-family: var(--font-body);
   font-size: 16px;
-  color: var(--color-deep-crimson);
+  color: var(--color-near-black);
   background: none;
   border: none;
   outline: none;
 }
 
 .hero__search-input::placeholder {
-  color: rgba(89, 9, 12, 0.5);
+  color: rgba(26, 2, 2, 0.5);
 }
 
 .hero__search-btn {
@@ -389,17 +392,16 @@
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-white);
-  opacity: 0.8;
+  color: rgba(26, 2, 2, 0.6);
 }
 
 .hero__suggestion {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-white);
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-deep-crimson);
+  background-color: transparent;
+  border: 1px solid var(--color-light-gray);
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
@@ -407,9 +409,9 @@
 }
 
 .hero__suggestion:hover {
-  background-color: var(--color-white);
-  color: var(--color-deep-crimson);
-  border-color: var(--color-white);
+  background-color: var(--color-deep-crimson);
+  color: var(--color-white);
+  border-color: var(--color-deep-crimson);
 }
 
 /* Affiliate Program */
@@ -428,7 +430,7 @@
   font-family: var(--font-heading);
   font-size: clamp(28px, 4vw, 36px);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   line-height: 1.2;
 }
 
@@ -436,8 +438,7 @@
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.6;
-  color: var(--color-white);
-  opacity: 0.9;
+  color: var(--color-near-black);
 }
 
 .hero__affiliate-benefits {
@@ -453,11 +454,11 @@
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--color-near-black);
 }
 
 .hero__benefit svg {
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   flex-shrink: 0;
 }
 
@@ -465,9 +466,9 @@
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-deep-crimson);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-deep-crimson);
+  border: none;
   border-radius: 8px;
   padding: 16px 32px;
   cursor: pointer;
@@ -476,10 +477,9 @@
 }
 
 .hero__affiliate-btn:hover {
-  background-color: var(--color-warm-beige);
-  border-color: var(--color-white);
+  background-color: var(--color-dark-ruby);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(89, 9, 12, 0.4);
 }
 
 /* Brands */
@@ -491,7 +491,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-deep-crimson);
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
