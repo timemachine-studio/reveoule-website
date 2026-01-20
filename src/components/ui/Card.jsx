@@ -3,7 +3,6 @@
  * Luxury product/content card with minimal design
  */
 
-import { motion } from 'framer-motion';
 import './Card.css';
 
 const Card = ({
@@ -17,20 +16,12 @@ const Card = ({
   const classes = `${baseClass} ${baseClass}--${variant} ${hoverable ? `${baseClass}--hoverable` : ''} ${className}`;
 
   return (
-    <motion.div
+    <div
       className={classes}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1]
-      }}
-      whileHover={hoverable ? { y: -4 } : {}}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 

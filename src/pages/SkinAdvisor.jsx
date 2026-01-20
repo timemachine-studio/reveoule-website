@@ -3,7 +3,6 @@
  * Dedicated AI consultation page
  */
 
-import { motion } from 'framer-motion';
 import AISkinAdvisor from '../components/sections/AISkinAdvisor';
 import './SkinAdvisor.css';
 
@@ -13,12 +12,7 @@ const SkinAdvisor = () => {
       {/* Hero Section */}
       <section className="skin-advisor-hero">
         <div className="container">
-          <motion.div
-            className="skin-advisor-hero__content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="skin-advisor-hero__content">
             <span className="skin-advisor-hero__eyebrow">Personalized Consultation</span>
             <h1 className="skin-advisor-hero__title">AI Skin Advisor</h1>
             <p className="skin-advisor-hero__description">
@@ -26,7 +20,7 @@ const SkinAdvisor = () => {
               Our advanced algorithm analyzes your skin type, concerns, and goals to create
               a customized regimen designed for optimal results.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -36,13 +30,7 @@ const SkinAdvisor = () => {
       {/* Information Section */}
       <section className="skin-advisor-info">
         <div className="container">
-          <motion.div
-            className="skin-advisor-info__content"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="skin-advisor-info__content">
             <h2 className="skin-advisor-info__title">How It Works</h2>
             <div className="skin-advisor-info__grid">
               <div className="skin-advisor-info__step">
@@ -67,7 +55,7 @@ const SkinAdvisor = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

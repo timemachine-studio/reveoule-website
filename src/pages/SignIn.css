@@ -56,9 +56,4 @@
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.signin-btn:hover {
-  background: var(--color-dark-ruby);
 }

@@ -3,7 +3,6 @@
  * Luxury product showcase with elegant presentation
  */
 
-import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import './FeaturedProducts.css';
@@ -44,58 +43,22 @@ const FeaturedProducts = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-
   return (
     <section className="featured-products">
       <div className="featured-products__container container">
-        <motion.div
-          className="featured-products__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-        >
+        <div className="featured-products__header">
           <span className="featured-products__eyebrow">Bestsellers</span>
           <h2 className="featured-products__title">Featured Collection</h2>
           <p className="featured-products__description">
             Our most coveted formulations, meticulously crafted to deliver exceptional results.
             Each product represents the pinnacle of skincare innovation and luxury.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="featured-products__grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
+        <div className="featured-products__grid">
           {products.map((product) => (
-            <motion.div
+            <div
               key={product.id}
-              variants={itemVariants}
               className="featured-products__item"
             >
               <Card variant="white" hoverable>
@@ -128,21 +91,15 @@ const FeaturedProducts = () => {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="featured-products__footer"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <div className="featured-products__footer">
           <Button variant="primary" size="large" href="/products">
             View Full Collection
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

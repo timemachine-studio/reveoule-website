@@ -2,7 +2,6 @@
  * Join Page
  */
 
-import { motion } from 'framer-motion';
 import './Join.css';
 
 const Join = () => {
@@ -10,12 +9,7 @@ const Join = () => {
     <div className="join-page">
       <section className="join-container">
         <div className="container">
-          <motion.div
-            className="join-box"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="join-box">
             <h1>Join Rêveoulé</h1>
             <p>Create your account and start your luxury skincare journey</p>
             <form className="join-form">
@@ -33,7 +27,7 @@ const Join = () => {
               </div>
               <button type="submit" className="join-btn">Create Account</button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

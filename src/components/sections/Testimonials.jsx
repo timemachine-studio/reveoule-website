@@ -3,7 +3,6 @@
  * Medical-grade credibility with structured presentation
  */
 
-import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import './Testimonials.css';
 
@@ -36,34 +35,18 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <div className="testimonials__container container">
-        <motion.div
-          className="testimonials__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="testimonials__header">
           <span className="testimonials__eyebrow">Clinical Validation</span>
           <h2 className="testimonials__title">Evidence-Based Results</h2>
           <p className="testimonials__description">
             Trusted by dermatologists and discerning clients worldwide.
             Our formulations deliver measurable outcomes backed by clinical research.
           </p>
-        </motion.div>
+        </div>
 
         <div className="testimonials__grid">
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-            >
+            <div key={testimonial.id}>
               <Card variant="white" hoverable={false}>
                 <div className="testimonial-card">
                   <div className="testimonial-card__quote">
@@ -96,17 +79,11 @@ const Testimonials = () => {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          className="testimonials__stats"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <div className="testimonials__stats">
           <div className="testimonials__stat">
             <span className="testimonials__stat-value">98%</span>
             <span className="testimonials__stat-label">Client Satisfaction</span>
@@ -123,7 +100,7 @@ const Testimonials = () => {
             <span className="testimonials__stat-value">100%</span>
             <span className="testimonials__stat-label">Cruelty Free</span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -84,13 +84,6 @@
   color: var(--color-warm-beige);
   background-color: rgba(229, 222, 214, 0.1);
   border-radius: 2px;
-  transition: all var(--transition-base);
-}
-
-.footer__social-link:hover {
-  background-color: var(--color-deep-crimson);
-  color: var(--color-white);
-  transform: translateY(-2px);
 }
 
 /* Links Grid */
@@ -134,13 +127,7 @@
   font-size: 15px;
   color: var(--color-warm-beige);
   text-decoration: none;
-  transition: all var(--transition-base);
   display: inline-block;
-}
-
-.footer__link:hover {
-  color: var(--color-white);
-  transform: translateX(4px);
 }
 
 /* Bottom Bar */

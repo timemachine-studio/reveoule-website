@@ -4,7 +4,6 @@
  */
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import './Products.css';
@@ -90,19 +89,14 @@ const Products = () => {
       {/* Hero Section */}
       <section className="products-hero">
         <div className="container">
-          <motion.div
-            className="products-hero__content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="products-hero__content">
             <span className="products-hero__eyebrow">Our Collection</span>
             <h1 className="products-hero__title">Luxury Skincare</h1>
             <p className="products-hero__description">
               Explore our complete range of precision-formulated products,
               each designed to deliver exceptional results.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -131,22 +125,9 @@ const Products = () => {
       {/* Products Grid */}
       <section className="products-grid">
         <div className="container">
-          <motion.div
-            className="products-grid__wrapper"
-            layout
-          >
+          <div className="products-grid__wrapper">
             {filteredProducts.map((product, index) => (
-              <motion.div
-                key={product.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05
-                }}
-              >
+              <div key={product.id}>
                 <Card variant="white" hoverable>
                   <div className="product-item">
                     <div className="product-item__image">
@@ -177,9 +158,9 @@ const Products = () => {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

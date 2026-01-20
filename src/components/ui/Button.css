@@ -12,7 +12,6 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   border-radius: 2px;
-  transition: all var(--transition-base);
   cursor: pointer;
   text-decoration: none;
   border: none;
@@ -33,17 +32,6 @@
   border: 2px solid var(--color-deep-crimson);
 }
 
-.luxury-button--primary:hover:not(:disabled) {
-  background-color: var(--color-dark-ruby);
-  border-color: var(--color-dark-ruby);
-  box-shadow: 0 4px 16px rgba(89, 9, 12, 0.2);
-}
-
-.luxury-button--primary:active:not(:disabled) {
-  background-color: var(--color-near-black);
-  border-color: var(--color-near-black);
-}
-
 /* Secondary Variant - White with Deep Red Border */
 .luxury-button--secondary {
   background-color: var(--color-white);
@@ -51,26 +39,11 @@
   border: 2px solid var(--color-deep-crimson);
 }
 
-.luxury-button--secondary:hover:not(:disabled) {
-  background-color: var(--color-warm-beige);
-  border-color: var(--color-dark-ruby);
-  color: var(--color-dark-ruby);
-}
-
-.luxury-button--secondary:active:not(:disabled) {
-  background-color: var(--color-light-gray);
-}
-
 /* Tertiary Variant - Minimal */
 .luxury-button--tertiary {
   background-color: transparent;
   color: var(--color-deep-crimson);
   border: 2px solid transparent;
-}
-
-.luxury-button--tertiary:hover:not(:disabled) {
-  color: var(--color-dark-ruby);
-  border-color: var(--color-light-gray);
 }
 
 /* Size Variants */

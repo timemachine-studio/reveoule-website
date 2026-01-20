@@ -3,7 +3,6 @@
  * Luxury product category showcase
  */
 
-import { motion } from 'framer-motion';
 import './CategoryGrid.css';
 
 const CategoryGrid = () => {
@@ -55,36 +54,21 @@ const CategoryGrid = () => {
   return (
     <section className="category-grid">
       <div className="category-grid__container container">
-        <motion.div
-          className="category-grid__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="category-grid__header">
           <span className="category-grid__eyebrow">Product Lines</span>
           <h2 className="category-grid__title">Explore by Category</h2>
           <p className="category-grid__description">
             Each category represents years of research and refinement,
             offering specialized solutions for comprehensive skincare.
           </p>
-        </motion.div>
+        </div>
 
         <div className="category-grid__grid">
           {categories.map((category, index) => (
-            <motion.a
+            <a
               key={category.id}
               href={`/products?category=${category.name.toLowerCase()}`}
               className={`category-card ${category.featured ? 'category-card--featured' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-              whileHover={{ y: -8 }}
             >
               <div className="category-card__background">
                 <div className="category-card__gradient"></div>
@@ -104,7 +88,7 @@ const CategoryGrid = () => {
                   </svg>
                 </div>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

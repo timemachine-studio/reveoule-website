@@ -2,7 +2,6 @@
  * Sign In Page
  */
 
-import { motion } from 'framer-motion';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -10,12 +9,7 @@ const SignIn = () => {
     <div className="signin-page">
       <section className="signin-container">
         <div className="container">
-          <motion.div
-            className="signin-box"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="signin-box">
             <h1>Sign In</h1>
             <p>Welcome back to Rêveoulé</p>
             <form className="signin-form">
@@ -29,7 +23,7 @@ const SignIn = () => {
               </div>
               <button type="submit" className="signin-btn">Sign In</button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

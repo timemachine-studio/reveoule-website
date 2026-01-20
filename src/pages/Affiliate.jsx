@@ -2,7 +2,6 @@
  * Affiliate Program Page
  */
 
-import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import './Affiliate.css';
 
@@ -11,11 +10,7 @@ const Affiliate = () => {
     <div className="affiliate-page">
       <section className="affiliate-hero">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h1>Join Our Affiliate Program</h1>
             <p>Partner with Rêveoulé and earn exclusive commissions by sharing our luxury skincare products.</p>
             <div className="affiliate-benefits">
@@ -33,7 +28,7 @@ const Affiliate = () => {
               </div>
             </div>
             <Button variant="primary" size="large">Apply Now</Button>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

@@ -4,7 +4,6 @@
  */
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
 import './AISkinAdvisor.css';
@@ -80,41 +79,26 @@ const AISkinAdvisor = () => {
   return (
     <section className="ai-advisor">
       <div className="ai-advisor__container container">
-        <motion.div
-          className="ai-advisor__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="ai-advisor__header">
           <span className="ai-advisor__eyebrow">Personalized Guidance</span>
           <h2 className="ai-advisor__title">AI Skin Advisor</h2>
           <p className="ai-advisor__description">
             Receive personalized skincare recommendations based on your unique skin profile.
             Our advanced algorithm analyzes your responses to create a tailored regimen.
           </p>
-        </motion.div>
+        </div>
 
         <div className="ai-advisor__content">
-          <AnimatePresence mode="wait">
-            {!recommendation ? (
-              <motion.div
-                key="questionnaire"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-              >
+          {!recommendation ? (
+            <div key="questionnaire">
                 <Card variant="beige" hoverable={false}>
                   <div className="ai-advisor__questionnaire">
                     {/* Progress Bar */}
                     <div className="ai-advisor__progress">
                       <div className="ai-advisor__progress-bar">
-                        <motion.div
+                        <div
                           className="ai-advisor__progress-fill"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
-                          transition={{ duration: 0.3 }}
+                          style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
                         />
                       </div>
                       <span className="ai-advisor__progress-text">
@@ -163,14 +147,9 @@ const AISkinAdvisor = () => {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ) : (
-              <motion.div
-                key="results"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
+              <div key="results">
                 <Card variant="white" hoverable={false}>
                   <div className="ai-advisor__results">
                     <h3 className="ai-advisor__results-title">Your Personalized Regimen</h3>
@@ -205,9 +184,8 @@ const AISkinAdvisor = () => {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             )}
-          </AnimatePresence>
         </div>
       </div>
     </section>

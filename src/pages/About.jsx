@@ -3,7 +3,6 @@
  * Brand story and philosophy
  */
 
-import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import './About.css';
@@ -33,12 +32,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
-          <motion.div
-            className="about-hero__content"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-          >
+          <div className="about-hero__content">
             <span className="about-hero__eyebrow">Our Story</span>
             <h1 className="about-hero__title">Rêveoulé</h1>
             <p className="about-hero__subtitle">Where Science Meets Timeless Beauty</p>
@@ -46,20 +40,14 @@ const About = () => {
               Founded on the principle that luxury skincare should deliver transformative results,
               Rêveoulé represents the intersection of cutting-edge science and refined elegance.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Philosophy Section */}
       <section className="about-philosophy">
         <div className="container">
-          <motion.div
-            className="about-philosophy__content"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="about-philosophy__content">
             <h2 className="about-philosophy__title">Our Philosophy</h2>
             <p className="about-philosophy__text">
               At Rêveoulé, we believe skincare is both an art and a science. Each product is
@@ -81,32 +69,20 @@ const About = () => {
       {/* Values Section */}
       <section className="about-values">
         <div className="container">
-          <motion.div
-            className="about-values__header"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="about-values__header">
             <h2 className="about-values__title">Our Values</h2>
-          </motion.div>
+          </div>
 
           <div className="about-values__grid">
             {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-              >
+              <div key={index}>
                 <Card variant="white">
                   <div className="about-value">
                     <h3 className="about-value__title">{value.title}</h3>
                     <p className="about-value__description">{value.description}</p>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -115,13 +91,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="about-cta">
         <div className="container">
-          <motion.div
-            className="about-cta__content"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="about-cta__content">
             <h2 className="about-cta__title">Experience Rêveoulé</h2>
             <p className="about-cta__description">
               Discover how precision formulation and timeless elegance can transform your skincare routine.
@@ -134,7 +104,7 @@ const About = () => {
                 Contact Us
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

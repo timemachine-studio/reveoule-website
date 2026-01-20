@@ -97,13 +97,7 @@
   border: 2px solid transparent;
   border-radius: 2px;
   cursor: pointer;
-  transition: all var(--transition-base);
   text-transform: capitalize;
-}
-
-.products-filters__button:hover {
-  background-color: var(--color-warm-beige);
-  border-color: var(--color-deep-crimson);
 }
 
 .products-filters__button--active {

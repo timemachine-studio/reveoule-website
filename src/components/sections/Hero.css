@@ -100,7 +100,6 @@
   border-radius: 50px;
   padding: 8px 12px;
   cursor: pointer;
-  transition: all var(--transition-base);
   white-space: nowrap;
   flex: 1;
   min-width: fit-content;
@@ -118,10 +117,6 @@
     font-size: 14px;
     padding: 10px 20px;
   }
-}
-
-.hero__tab:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hero__tab--active {
@@ -259,7 +254,6 @@
   border-radius: 6px;
   padding: 6px 10px;
   cursor: pointer;
-  transition: all var(--transition-base);
 }
 
 @media (min-width: 480px) {
@@ -267,11 +261,6 @@
     font-size: 12px;
     padding: 6px 12px;
   }
-}
-
-.hero__option-btn:hover {
-  background-color: var(--color-warm-beige);
-  border-color: var(--color-deep-crimson);
 }
 
 .hero__option-btn--selected {
@@ -303,7 +292,6 @@
   border: 2px solid transparent;
   border-radius: 8px;
   padding: 10px 44px 10px 14px;
-  transition: all var(--transition-base);
   width: 100%;
 }
 
@@ -329,17 +317,9 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: all var(--transition-base);
   color: var(--color-white);
   z-index: 10;
-  /* Ensure it's above input */
   pointer-events: auto;
-  /* Ensure it's clickable */
-}
-
-.hero__arrow-btn:hover:not(:disabled) {
-  background-color: var(--color-dark-ruby);
-  transform: scale(1.05);
 }
 
 .hero__arrow-btn:disabled {
@@ -370,7 +350,6 @@
   border-radius: 8px;
   padding: 10px 44px 10px 14px;
   resize: vertical;
-  transition: all var(--transition-base);
   width: 100%;
 }
 
@@ -400,12 +379,7 @@
   border-radius: 8px;
   padding: 16px 32px;
   cursor: pointer;
-  transition: all var(--transition-base);
   align-self: flex-start;
-}
-
-.hero__submit-btn:hover:not(:disabled) {
-  background-color: var(--color-dark-ruby);
 }
 
 .hero__submit-btn:disabled {
@@ -417,10 +391,6 @@
   background-color: var(--color-light-gray);
   color: var(--color-near-black);
   margin-top: var(--spacing-md);
-}
-
-.hero__submit-btn--secondary:hover:not(:disabled) {
-  background-color: var(--color-warm-beige);
 }
 
 /* Results */
@@ -506,7 +476,6 @@
   border: 2px solid transparent;
   border-radius: 12px;
   padding: var(--spacing-sm) var(--spacing-md);
-  transition: all var(--transition-base);
 }
 
 .hero__search-container:focus-within {
@@ -544,12 +513,6 @@
   border-radius: 8px;
   padding: 12px 24px;
   cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.hero__search-btn:hover {
-  background-color: var(--color-dark-ruby);
-  transform: scale(1.02);
 }
 
 .hero__search-suggestions {
@@ -576,13 +539,6 @@
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.hero__suggestion:hover {
-  background-color: var(--color-deep-crimson);
-  color: var(--color-white);
-  border-color: var(--color-deep-crimson);
 }
 
 /* Affiliate Program */
@@ -643,12 +599,7 @@
   border-radius: 8px;
   padding: 16px 32px;
   cursor: pointer;
-  transition: all var(--transition-base);
   align-self: flex-start;
-}
-
-.hero__affiliate-btn:hover {
-  background-color: var(--color-dark-ruby);
 }
 
 /* Brands */
