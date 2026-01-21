@@ -103,6 +103,7 @@
   white-space: nowrap;
   flex: 1;
   min-width: fit-content;
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 480px) {
@@ -155,6 +156,7 @@
   display: flex;
   flex-direction: column;
   overflow: visible;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -185,6 +187,18 @@
   flex-direction: column;
   gap: var(--spacing-sm);
   height: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 768px) {
@@ -254,6 +268,8 @@
   border-radius: 6px;
   padding: 6px 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
 }
 
 @media (min-width: 480px) {
@@ -263,10 +279,15 @@
   }
 }
 
+.hero__option-btn:active {
+  transform: scale(0.95);
+}
+
 .hero__option-btn--selected {
   background-color: var(--color-deep-crimson);
   color: var(--color-white);
   border-color: var(--color-deep-crimson);
+  transform: scale(1.05);
 }
 
 .hero__input-wrapper {
@@ -320,6 +341,17 @@
   color: var(--color-white);
   z-index: 10;
   pointer-events: auto;
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.hero__arrow-btn:not(:disabled):hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(89, 9, 12, 0.3);
+}
+
+.hero__arrow-btn:not(:disabled):active {
+  transform: scale(0.95);
 }
 
 .hero__arrow-btn:disabled {
@@ -600,6 +632,33 @@
   padding: 16px 32px;
   cursor: pointer;
   align-self: flex-start;
+}
+
+/* Mobile Model Image */
+.hero__mobile-visual {
+  display: none;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1023px) {
+  .hero__mobile-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hero__mobile-model-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 /* Brands */

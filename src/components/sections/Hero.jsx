@@ -422,6 +422,15 @@ Constraints:
             )}
           </div>
 
+          {/* Mobile Model Image */}
+          <div className="hero__mobile-visual">
+            <img
+              src="/images/hero-model.png"
+              alt="Reveoule Model"
+              className="hero__mobile-model-image"
+            />
+          </div>
+
           {/* Brands Section */}
           <div className="hero__brands">
             <span className="hero__brands-label">Your French beauty saloon at home</span>

@@ -106,6 +106,7 @@
   letter-spacing: 0.05em;
   padding: 12px 0;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .navigation__link::after {
@@ -116,6 +117,11 @@
   width: 0;
   height: 2px;
   background-color: var(--color-deep-crimson);
+  transition: width 0.3s ease;
+}
+
+.navigation__link:hover::after {
+  width: 100%;
 }
 
 .navigation__link--active {
@@ -163,6 +169,12 @@
   color: var(--color-near-black);
   text-decoration: none;
   border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation__dropdown-link:hover {
+  background-color: var(--color-light-gray);
+  color: var(--color-deep-crimson);
 }
 
 /* Actions */
