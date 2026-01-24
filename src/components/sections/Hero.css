@@ -236,12 +236,18 @@
 .hero__option-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+}
+
+@media (min-width: 480px) {
+  .hero__option-group {
+    gap: 8px;
+  }
 }
 
 .hero__option-label {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--color-near-black);
   letter-spacing: 0.02em;
@@ -321,13 +327,21 @@
 
 .hero__text-input {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-near-black);
   background-color: var(--color-light-gray);
   border: 2px solid transparent;
-  border-radius: 8px;
-  padding: 10px 44px 10px 14px;
+  border-radius: 6px;
+  padding: 8px 36px 8px 10px;
   width: 100%;
+}
+
+@media (min-width: 480px) {
+  .hero__text-input {
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 10px 44px 10px 14px;
+  }
 }
 
 .hero__text-input:focus {
@@ -342,21 +356,30 @@
 
 .hero__arrow-btn {
   position: absolute;
-  right: 6px;
+  right: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background-color: var(--color-deep-crimson);
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   color: var(--color-white);
   z-index: 10;
   pointer-events: auto;
   transition: all 0.2s ease;
   transform: scale(1);
+}
+
+@media (min-width: 480px) {
+  .hero__arrow-btn {
+    right: 6px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
 }
 
 .hero__arrow-btn:not(:disabled):hover {
@@ -473,13 +496,21 @@
 .hero__branding {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding-top: 8px;
+  gap: 4px;
+  padding-top: 6px;
   padding-bottom: 0;
   padding-left: var(--spacing-sm);
   padding-right: var(--spacing-sm);
   border-top: 1px solid var(--color-light-gray);
-  margin-top: var(--spacing-sm);
+  margin-top: auto;
+}
+
+@media (min-width: 480px) {
+  .hero__branding {
+    gap: 6px;
+    padding-top: 8px;
+    margin-top: var(--spacing-sm);
+  }
 }
 
 @media (min-width: 768px) {
@@ -493,32 +524,56 @@
 
 .hero__branding-text {
   font-family: 'Poppins', var(--font-body);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 300;
   color: rgba(26, 2, 2, 0.6);
 }
 
+@media (min-width: 480px) {
+  .hero__branding-text {
+    font-size: 12px;
+  }
+}
+
 .hero__branding-logo {
   font-family: 'Poppins', var(--font-body);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--color-deep-crimson);
   letter-spacing: 0;
+}
+
+@media (min-width: 480px) {
+  .hero__branding-logo {
+    font-size: 12px;
+  }
 }
 
 /* Search Product */
 .hero__search {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 4px;
+}
+
+@media (min-width: 480px) {
+  .hero__search {
+    gap: var(--spacing-sm);
+  }
 }
 
 .hero__search-suggestions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
   padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 480px) {
+  .hero__search-suggestions {
+    gap: 6px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -529,20 +584,26 @@
 
 .hero__suggestion-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   color: rgba(26, 2, 2, 0.6);
 }
 
+@media (min-width: 480px) {
+  .hero__suggestion-label {
+    font-size: 12px;
+  }
+}
+
 .hero__suggestion {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   color: var(--color-deep-crimson);
   background-color: transparent;
   border: 1px solid var(--color-light-gray);
-  border-radius: 12px;
-  padding: 4px 10px;
+  border-radius: 10px;
+  padding: 3px 8px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -552,12 +613,9 @@
 }
 
 @media (min-width: 480px) {
-  .hero__suggestion-label {
-    font-size: 12px;
-  }
-
   .hero__suggestion {
     font-size: 11px;
+    border-radius: 12px;
     padding: 5px 12px;
   }
 }
@@ -566,18 +624,30 @@
 .hero__affiliate {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 4px;
+}
+
+@media (min-width: 480px) {
+  .hero__affiliate {
+    gap: var(--spacing-sm);
+  }
 }
 
 .hero__affiliate-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 4px;
+}
+
+@media (min-width: 480px) {
+  .hero__affiliate-content {
+    gap: var(--spacing-xs);
+  }
 }
 
 .hero__affiliate-title {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--color-near-black);
   letter-spacing: 0.02em;
@@ -603,8 +673,14 @@
 .hero__affiliate-benefits {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 480px) {
+  .hero__affiliate-benefits {
+    gap: 6px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -616,19 +692,21 @@
 .hero__benefit {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   color: var(--color-near-black);
   background-color: var(--color-light-gray);
-  border-radius: 6px;
-  padding: 6px 10px;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
 @media (min-width: 480px) {
   .hero__benefit {
     font-size: 11px;
+    gap: 4px;
+    border-radius: 6px;
     padding: 6px 12px;
   }
 }
@@ -636,23 +714,38 @@
 .hero__benefit svg {
   color: var(--color-deep-crimson);
   flex-shrink: 0;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
+}
+
+@media (min-width: 480px) {
+  .hero__benefit svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .hero__affiliate-btn {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--color-white);
   background-color: var(--color-deep-crimson);
   border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
+  border-radius: 4px;
+  padding: 6px 14px;
   cursor: pointer;
   align-self: flex-start;
   margin: 0 var(--spacing-sm);
   transition: all 0.2s ease;
+}
+
+@media (min-width: 480px) {
+  .hero__affiliate-btn {
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 10px 20px;
+  }
 }
 
 .hero__affiliate-btn:hover {
