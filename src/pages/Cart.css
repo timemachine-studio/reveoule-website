@@ -1,0 +1,113 @@
+/**
+ * Cart Page Styles
+ * White background with red accents
+ */
+
+.cart-page {
+    padding-top: 100px;
+    background-color: var(--color-white);
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.cart-hero {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.cart-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 5vw, 40px);
+    color: var(--color-deep-crimson);
+    margin: 0;
+}
+
+/* Cart Content */
+.cart-content {
+    padding: var(--spacing-xl) 0 var(--spacing-xxl);
+}
+
+/* Empty Cart State */
+.cart-empty {
+    text-align: center;
+    padding: var(--spacing-xxl) 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cart-empty__icon {
+    color: var(--color-deep-crimson);
+    opacity: 0.3;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cart-empty__title {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--color-deep-crimson);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cart-empty__description {
+    font-size: 16px;
+    color: var(--color-near-black);
+    opacity: 0.75;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cart-empty__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+@media (min-width: 480px) {
+    .cart-empty__actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Benefits Section */
+.cart-benefits {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-warm-beige) 0%, var(--color-light-gray) 100%);
+}
+
+.cart-benefits__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 640px) {
+    .cart-benefits__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.cart-benefit {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.cart-benefit__icon {
+    color: var(--color-deep-crimson);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cart-benefit__title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--color-deep-crimson);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cart-benefit__text {
+    font-size: 14px;
+    color: var(--color-near-black);
+    opacity: 0.75;
+}

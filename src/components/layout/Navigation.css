@@ -43,8 +43,8 @@
   flex-direction: column;
   text-decoration: none;
   flex-shrink: 0;
-  cursor: default;
-  pointer-events: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 @media (max-width: 1023px) {
@@ -52,6 +52,18 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+.navigation__logo-img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+  .navigation__logo-img {
+    height: 30px;
   }
 }
 
@@ -219,6 +231,19 @@
   text-decoration: none;
   padding: 10px 24px;
   border-radius: 6px;
+}
+
+.navigation__cart {
+  padding: 8px;
+  color: var(--color-near-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.navigation__cart:hover {
+  color: var(--color-deep-crimson);
 }
 
 /* Mobile Menu Toggle */

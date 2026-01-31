@@ -1,9 +1,8 @@
 /**
  * Featured Products Section
- * Luxury product showcase with elegant presentation
+ * Luxury product showcase with elegant card design
  */
 
-import Button from '../ui/Button';
 import './FeaturedProducts.css';
 
 const FeaturedProducts = () => {
@@ -11,36 +10,61 @@ const FeaturedProducts = () => {
     {
       id: 1,
       name: 'Radiance Renewal Serum',
-      category: 'Serum',
-      description: 'Advanced peptide complex for visible skin transformation.',
-      price: '$285',
-      benefits: ['Brightening', 'Anti-Aging', 'Hydration']
+      price: 285,
+      rating: 4.8
     },
     {
       id: 2,
       name: 'Velvet Touch Moisturizer',
-      category: 'Moisturizer',
-      description: 'Ultra-luxe hydration with botanical ceramides.',
-      price: '$245',
-      benefits: ['Deep Hydration', 'Barrier Support', 'Smoothing']
+      price: 245,
+      rating: 4.9
     },
     {
       id: 3,
       name: 'Luminous Eye Concentrate',
-      category: 'Eye Care',
-      description: 'Precision-targeted treatment for delicate eye area.',
-      price: '$195',
-      benefits: ['Dark Circles', 'Fine Lines', 'Firmness']
+      price: 195,
+      rating: 4.7
     },
     {
       id: 4,
       name: 'Pure Essence Cleanser',
-      category: 'Cleanser',
-      description: 'Gentle yet effective clarifying treatment.',
-      price: '$165',
-      benefits: ['Deep Cleansing', 'pH Balance', 'Softening']
+      price: 165,
+      rating: 4.5
     }
   ];
+
+  // Star rating component
+  const StarRating = ({ rating }) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    return (
+      <div className="product-card__rating">
+        {[...Array(fullStars)].map((_, i) => (
+          <svg key={`full-${i}`} className="product-card__star product-card__star--filled" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+        {hasHalfStar && (
+          <svg className="product-card__star product-card__star--half" viewBox="0 0 20 20">
+            <defs>
+              <linearGradient id="halfGrad">
+                <stop offset="50%" stopColor="currentColor" />
+                <stop offset="50%" stopColor="#E5E5E5" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#halfGrad)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        )}
+        {[...Array(emptyStars)].map((_, i) => (
+          <svg key={`empty-${i}`} className="product-card__star product-card__star--empty" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <section className="featured-products">
@@ -55,46 +79,29 @@ const FeaturedProducts = () => {
 
         <div className="featured-products__grid">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="featured-products__item"
-            >
-              <div className="product-card">
-                <div className="product-card__image">
-                  <div className="product-card__image-placeholder">
-                    <span className="product-card__category">{product.category}</span>
-                  </div>
-                </div>
+            <div key={product.id} className="product-card">
+              {/* Image Placeholder */}
+              <div className="product-card__image">
+                <div className="product-card__image-placeholder"></div>
+              </div>
 
-                <div className="product-card__content">
-                  <div className="product-card__header">
-                    <h3 className="product-card__name">{product.name}</h3>
-                    <span className="product-card__price">{product.price}</span>
-                  </div>
+              {/* Product Info Row */}
+              <div className="product-card__info">
+                <h3 className="product-card__name">{product.name}</h3>
+                <StarRating rating={product.rating} />
+              </div>
 
-                  <p className="product-card__description">{product.description}</p>
-
-                  <div className="product-card__benefits">
-                    {product.benefits.map((benefit, index) => (
-                      <span key={index} className="product-card__benefit">
-                        {benefit}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Button variant="secondary" size="small" className="product-card__button">
-                    View Details
-                  </Button>
-                </div>
+              {/* Price and Buy Button Row */}
+              <div className="product-card__footer">
+                <span className="product-card__price">${product.price.toFixed(2)}</span>
+                <button className="product-card__buy-btn">Buy Now</button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="featured-products__footer">
-          <Button variant="primary" size="large" href="/products">
-            View Full Collection
-          </Button>
+        <div className="featured-products__cta">
+          <a href="/products" className="featured-products__view-all">View Full Collection</a>
         </div>
       </div>
     </section>

@@ -16,6 +16,10 @@ import Plans from './pages/Plans';
 import Affiliate from './pages/Affiliate';
 import SignIn from './pages/SignIn';
 import Join from './pages/Join';
+import Featured from './pages/Featured';
+import Category from './pages/Category';
+import Policy from './pages/Policy';
+import Cart from './pages/Cart';
 import './styles/global.css';
 
 function App() {
@@ -33,6 +37,10 @@ function App() {
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/featured" element={<Featured />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/policy" element={<Policy />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </div>

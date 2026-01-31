@@ -9,7 +9,6 @@ import './Navigation.css';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,15 +16,10 @@ const Navigation = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Products', path: '/products' },
-    { name: 'Plans', path: '/plans' },
-    { name: 'Resources', path: '/about', hasDropdown: true },
-  ];
-
-  const resourceLinks = [
-    { name: 'About Us', path: '/about' },
+    { name: 'Featured', path: '/featured' },
+    { name: 'Category', path: '/category' },
     { name: 'Contact', path: '/contact' },
-    { name: 'AI Skin Advisor', path: '/skin-advisor' },
+    { name: 'Policy', path: '/policy' },
   ];
 
   return (
@@ -45,49 +39,19 @@ const Navigation = () => {
 
           {/* Logo - Centered on mobile */}
           <Link to="/" className="navigation__logo">
-            <span className="navigation__logo-text">Rêveoulé</span>
-            <span className="navigation__logo-tagline">Skincare & Beauty</span>
+            <img src="/Reveoule_full_logo.webp" alt="Rêveoulé" className="navigation__logo-img" />
           </Link>
 
           {/* Desktop Navigation Links */}
           <ul className="navigation__links">
             {navLinks.map((link) => (
               <li key={link.path} className="navigation__item">
-                {link.hasDropdown ? (
-                  <div
-                    className="navigation__dropdown"
-                    onMouseEnter={() => setIsResourcesOpen(true)}
-                    onMouseLeave={() => setIsResourcesOpen(false)}
-                  >
-                    <button className="navigation__link navigation__link--dropdown">
-                      {link.name}
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                        <path d="M6 8L2 4h8l-4 4z" />
-                      </svg>
-                    </button>
-                    {isResourcesOpen && (
-                      <div className="navigation__dropdown-menu">
-                        {resourceLinks.map((resource) => (
-                          <Link
-                            key={resource.path}
-                            to={resource.path}
-                            className="navigation__dropdown-link"
-                          >
-                            {resource.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={link.path}
-                    className={`navigation__link ${location.pathname === link.path ? 'navigation__link--active' : ''
-                      }`}
-                  >
-                    {link.name}
-                  </Link>
-                )}
+                <Link
+                  to={link.path}
+                  className={`navigation__link ${location.pathname === link.path ? 'navigation__link--active' : ''}`}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -104,6 +68,13 @@ const Navigation = () => {
             </button>
             <Link to="/signin" className="navigation__signin">Sign in</Link>
             <Link to="/join" className="navigation__join-btn">Join</Link>
+            <Link to="/cart" className="navigation__cart" aria-label="Shopping Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </Link>
           </div>
         </div>
       </nav>
@@ -121,8 +92,7 @@ const Navigation = () => {
           <div className="navigation__sidebar">
             <div className="navigation__sidebar-header">
               <Link to="/" className="navigation__sidebar-logo" onClick={() => setIsMobileMenuOpen(false)}>
-                <span className="navigation__logo-text">Rêveoulé</span>
-                <span className="navigation__logo-tagline">Skincare & Beauty</span>
+                <img src="/Reveoule_full_logo.webp" alt="Rêveoulé" className="navigation__logo-img" />
               </Link>
             </div>
 
