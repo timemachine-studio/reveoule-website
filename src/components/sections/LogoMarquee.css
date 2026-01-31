@@ -1,0 +1,118 @@
+/**
+ * Logo Marquee Styles
+ * Infinite scrolling marquee animation
+ */
+
+.logo-marquee {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 20px 0;
+    margin-top: var(--spacing-xl);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+/* Fade edges for smooth blend */
+.logo-marquee::before,
+.logo-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-white), transparent);
+}
+
+.logo-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-white), transparent);
+}
+
+.logo-marquee__track {
+    display: flex;
+    width: 100%;
+}
+
+.logo-marquee__content {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    animation: marquee-scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.logo-marquee__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+    font-family: var(--font-heading);
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 500;
+    color: var(--color-deep-crimson);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.logo-marquee__separator {
+    color: var(--color-dark-ruby);
+    font-size: clamp(10px, 1.5vw, 14px);
+    margin: 0 24px;
+    opacity: 0.5;
+}
+
+/* Smooth infinite scroll animation */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover for accessibility */
+.logo-marquee:hover .logo-marquee__content {
+    animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-marquee {
+        padding: 16px 0;
+    }
+
+    .logo-marquee__item {
+        gap: 16px;
+    }
+
+    .logo-marquee__separator {
+        margin: 0 16px;
+    }
+
+    .logo-marquee__content {
+        animation-duration: 30s;
+    }
+
+    .logo-marquee::before,
+    .logo-marquee::after {
+        width: 50px;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .logo-marquee__content {
+        animation: none;
+    }
+}

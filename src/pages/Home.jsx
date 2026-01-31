@@ -4,6 +4,7 @@
  */
 
 import Hero from '../components/sections/Hero';
+import LogoMarquee from '../components/sections/LogoMarquee';
 import FeaturedProducts from '../components/sections/FeaturedProducts';
 import CategoryGrid from '../components/sections/CategoryGrid';
 import AISkinAdvisor from '../components/sections/AISkinAdvisor';
@@ -17,6 +18,7 @@ const Home = () => {
       <div className="hero-tagline-mobile">
         <span className="hero-tagline-mobile__text">Your French beauty saloon at home</span>
       </div>
+      <LogoMarquee />
       <FeaturedProducts />
       <CategoryGrid />
       <AISkinAdvisor />
