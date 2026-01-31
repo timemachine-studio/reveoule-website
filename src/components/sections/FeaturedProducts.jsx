@@ -24,12 +24,6 @@ const FeaturedProducts = () => {
       name: 'Luminous Eye Concentrate',
       price: 195,
       rating: 4.7
-    },
-    {
-      id: 4,
-      name: 'Pure Essence Cleanser',
-      price: 165,
-      rating: 4.5
     }
   ];
 
