@@ -20,7 +20,7 @@
 }
 
 .ai-advisor__eyebrow {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 14px;
   font-weight: 500;
   color: var(--color-deep-crimson);
@@ -31,7 +31,7 @@
 }
 
 .ai-advisor__title {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 600;
   color: var(--color-deep-crimson);
@@ -40,7 +40,7 @@
 }
 
 .ai-advisor__description {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 20px;
   line-height: 1.6;
   color: var(--color-near-black);
@@ -52,11 +52,9 @@
 
 /* Content Card - Royal Red Gradient */
 .ai-advisor__content .luxury-card--beige {
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border: none;
   box-shadow: 0 8px 32px rgba(89, 9, 12, 0.25);
   border-radius: 12px;
@@ -92,7 +90,7 @@
 }
 
 .ai-advisor__progress-text {
-  font-family: var(--font-body);
+  font-family: 'Poppins', var(--font-body);
   font-size: 13px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
@@ -109,7 +107,7 @@
 }
 
 .ai-advisor__question-text {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: clamp(22px, 3vw, 28px);
   font-weight: 600;
   color: var(--color-white);
@@ -129,7 +127,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
-  font-family: var(--font-body);
+  font-family: 'Poppins', var(--font-body);
   font-size: 14px;
   font-weight: 500;
   color: var(--color-white);
@@ -190,7 +188,7 @@
 }
 
 .ai-advisor__results-title {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: clamp(28px, 4vw, 36px);
   font-weight: 600;
   color: var(--color-deep-crimson);
@@ -202,17 +200,15 @@
 /* Rationale */
 .ai-advisor__rationale {
   padding: var(--spacing-md);
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border-radius: 8px;
   border-left: none;
 }
 
 .ai-advisor__rationale p {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 17px;
   line-height: 1.75;
   color: var(--color-white);
@@ -225,7 +221,7 @@
 }
 
 .ai-advisor__routine-title {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 24px;
   font-weight: 600;
   color: var(--color-deep-crimson);
@@ -243,11 +239,9 @@
   display: flex;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border-radius: 12px;
   align-items: flex-start;
   transition: transform 0.3s ease;
@@ -266,7 +260,7 @@
   background-color: var(--color-white);
   color: var(--color-deep-crimson);
   border-radius: 50px;
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 18px;
   font-weight: 600;
   flex-shrink: 0;
@@ -280,7 +274,7 @@
 }
 
 .ai-advisor__routine-step-name {
-  font-family: var(--font-body);
+  font-family: 'Poppins', var(--font-body);
   font-size: 12px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
@@ -289,14 +283,14 @@
 }
 
 .ai-advisor__routine-product {
-  font-family: var(--font-heading);
+  font-family: 'Poppins', var(--font-body);
   font-size: 18px;
   font-weight: 600;
   color: var(--color-white);
 }
 
 .ai-advisor__routine-time {
-  font-family: var(--font-body);
+  font-family: 'Poppins', var(--font-body);
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
 }
