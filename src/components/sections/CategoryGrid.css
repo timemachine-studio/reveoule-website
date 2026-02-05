@@ -1,53 +1,38 @@
 /**
  * Category Grid Section Styles
- * Hero-inspired luxury category cards with royal red styling
+ * Hero-inspired luxury category cards with inverted styling
  */
 
 .category-grid {
-  padding: var(--spacing-xxxl) 0;
-  background-color: var(--color-white);
+  padding: 0 0 100px;
+  /* Only bottom padding for the section end */
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
 }
 
 .category-grid__container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
+  display: block;
+  /* Removed flex/gap to rely on explicit margins */
 }
 
 /* Header */
 .category-grid__header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-.category-grid__eyebrow {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-deep-crimson);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: var(--spacing-md);
-  display: block;
+  margin: 0 auto;
+  padding: 90px 0;
+  /* Symmetric padding guarantees centering relative to itself */
 }
 
 .category-grid__title {
-  font-family: var(--font-heading);
-  font-size: clamp(36px, 6vw, 56px);
+  font-family: var(--font-poppins);
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 600;
-  color: var(--color-deep-crimson);
-  margin-bottom: var(--spacing-md);
-  letter-spacing: -0.02em;
-}
-
-.category-grid__description {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--color-near-black);
-  font-weight: 400;
-  font-style: italic;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 /* Grid */
@@ -69,70 +54,27 @@
   }
 }
 
-/* Category Card - Royal Red Gradient */
+/* Category Card - White with subtle shadow */
 .category-card {
   position: relative;
   display: block;
-  min-height: 280px;
-  padding: var(--spacing-lg);
+  min-height: 180px;
+  padding: var(--spacing-md);
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   border: none;
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
-  box-shadow: 0 8px 32px rgba(89, 9, 12, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-white);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  /* transition: none; - default is no transition, implicit is fine or explicit none */
+  transition: none;
 }
 
-.category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(89, 9, 12, 0.3);
-}
-
-/* Featured cards span multiple columns */
-.category-card--featured {
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 50%,
-    var(--color-near-black) 100%
-  );
-}
-
-@media (min-width: 640px) {
-  .category-card--featured {
-    grid-column: span 2;
-  }
-}
-
-@media (min-width: 1024px) {
-  .category-card--featured:first-child {
-    grid-column: span 2;
-    grid-row: span 2;
-    min-height: auto;
-  }
-}
+/* Hover effect removed */
 
 /* Background decorative gradient overlay */
 .category-card__background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 1;
-}
-
-.category-card__gradient {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 80% 20%,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%
-  );
+  display: none;
 }
 
 /* Content */
@@ -152,31 +94,33 @@
 }
 
 .category-card__name {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 4vw, 36px);
+  font-family: var(--font-poppins);
+  font-size: clamp(22px, 3vw, 28px);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-deep-crimson);
   line-height: 1.2;
   letter-spacing: -0.01em;
   margin: 0;
 }
 
 .category-card__count {
-  font-family: var(--font-body);
-  font-size: 13px;
+  font-family: var(--font-poppins);
+  font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-near-black);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  opacity: 0.7;
 }
 
 .category-card__description {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-near-black);
   margin: 0;
   flex: 1;
+  opacity: 0.8;
 }
 
 /* Arrow Button */
@@ -186,41 +130,58 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background-color: var(--color-white);
-  color: var(--color-deep-crimson);
-  border-radius: 50px;
+  background-color: var(--color-deep-crimson) !important;
+  color: white !important;
+  border-radius: 50% !important;
   margin-top: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: none !important;
+  transform: none !important;
 }
 
-.category-card:hover .category-card__arrow {
-  transform: scale(1.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+.category-card__arrow svg {
+  stroke: white !important;
+  stroke-width: 2px !important;
+  width: 24px !important;
+  height: 24px !important;
 }
 
-/* Responsive adjustments */
+/* Ensure no hover effects on the card or its children */
+/* Ensure no hover effects on the card or its children */
+.category-card:hover,
+.category-card:focus,
+.category-card:active {
+  transform: none !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15) !important;
+  transition: none !important;
+  background-color: var(--color-white) !important;
+}
+
+/* Ensure arrow stays red on card hover */
+.category-card:hover .category-card__arrow,
+.category-card:focus .category-card__arrow {
+  background-color: var(--color-deep-crimson) !important;
+  color: white !important;
+  transform: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
 @media (max-width: 1024px) {
-  .category-grid {
-    padding: var(--spacing-xxl) 0;
-  }
+  /* Removed unbalanced padding override */
 }
 
 @media (max-width: 768px) {
-  .category-grid {
-    padding: var(--spacing-xl) 0;
-  }
-
   .category-grid__description {
     font-size: 18px;
   }
 
   .category-card {
-    min-height: 220px;
-    padding: var(--spacing-md);
+    min-height: 160px;
+    padding: var(--spacing-sm);
   }
 
   .category-card__name {
-    font-size: clamp(24px, 5vw, 28px);
+    font-size: clamp(20px, 4vw, 24px);
   }
 
   .category-card__arrow {

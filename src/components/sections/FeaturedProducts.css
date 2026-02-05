@@ -22,7 +22,7 @@
 }
 
 .featured-products__eyebrow {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: 14px;
   font-weight: 500;
   color: var(--color-deep-crimson);
@@ -33,7 +33,7 @@
 }
 
 .featured-products__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 600;
   color: var(--color-deep-crimson);
@@ -42,12 +42,11 @@
 }
 
 .featured-products__description {
-  font-family: var(--font-heading);
-  font-size: 20px;
+  font-family: var(--font-poppins);
+  font-size: 18px;
   line-height: 1.6;
   color: var(--color-near-black);
   font-weight: 400;
-  font-style: italic;
 }
 
 /* Grid */
@@ -97,7 +96,7 @@
 }
 
 .product-card__name {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 14px;
   font-weight: 500;
   color: var(--color-near-black);
@@ -139,7 +138,7 @@
 }
 
 .product-card__price {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 20px;
   font-weight: 600;
   color: var(--color-near-black);
@@ -148,7 +147,7 @@
 .product-card__buy-btn {
   background-color: var(--color-deep-crimson);
   color: var(--color-white);
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 20px;
@@ -169,7 +168,7 @@
 }
 
 .featured-products__view-all {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 14px;
   font-weight: 600;
   color: var(--color-deep-crimson);

@@ -22,7 +22,7 @@
 }
 
 .testimonials__eyebrow {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: 14px;
   font-weight: 500;
   color: var(--color-deep-crimson);
@@ -33,7 +33,7 @@
 }
 
 .testimonials__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 600;
   color: var(--color-deep-crimson);
@@ -42,12 +42,11 @@
 }
 
 .testimonials__description {
-  font-family: var(--font-heading);
-  font-size: 20px;
+  font-family: var(--font-poppins);
+  font-size: 18px;
   line-height: 1.6;
   color: var(--color-near-black);
   font-weight: 400;
-  font-style: italic;
 }
 
 /* Grid */
@@ -66,21 +65,19 @@
 }
 
 /* Grid Item - Contains the Card */
-.testimonials__grid > div {
-  transition: transform 0.3s ease;
+.testimonials__grid>div {
+  transition: none;
 }
 
-.testimonials__grid > div:hover {
-  transform: translateY(-8px);
+.testimonials__grid>div:hover {
+  transform: none;
 }
 
 /* Override Card Styles for Testimonials */
 .testimonials__grid .luxury-card--white {
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border: none;
   box-shadow: 0 8px 32px rgba(89, 9, 12, 0.2);
   border-radius: 12px;
@@ -88,8 +85,8 @@
   transition: box-shadow 0.3s ease;
 }
 
-.testimonials__grid > div:hover .luxury-card--white {
-  box-shadow: 0 16px 48px rgba(89, 9, 12, 0.3);
+.testimonials__grid>div:hover .luxury-card--white {
+  box-shadow: 0 8px 32px rgba(89, 9, 12, 0.2);
 }
 
 /* Testimonial Card */
@@ -114,11 +111,10 @@
 }
 
 .testimonial-card__content {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: 16px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
   margin: 0;
   flex: 1;
 }
@@ -159,15 +155,14 @@
 }
 
 .testimonial-card__name {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: 16px;
   font-weight: 600;
   color: var(--color-white);
-  font-style: normal;
 }
 
 .testimonial-card__title {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -178,12 +173,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   padding: var(--spacing-xl);
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 50%,
-    var(--color-near-black) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 50%,
+      var(--color-near-black) 100%);
   border-radius: 12px;
   margin-top: var(--spacing-xl);
   box-shadow: 0 8px 32px rgba(89, 9, 12, 0.25);
@@ -204,7 +197,7 @@
 }
 
 .testimonials__stat-value {
-  font-family: var(--font-heading);
+  font-family: var(--font-poppins);
   font-size: clamp(36px, 5vw, 48px);
   font-weight: 700;
   color: var(--color-white);
@@ -212,7 +205,7 @@
 }
 
 .testimonials__stat-label {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins);
   font-size: 13px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);

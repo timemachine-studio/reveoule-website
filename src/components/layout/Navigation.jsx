@@ -9,6 +9,7 @@ import './Navigation.css';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,7 +20,6 @@ const Navigation = () => {
     { name: 'Featured', path: '/featured' },
     { name: 'Category', path: '/category' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Policy', path: '/policy' },
   ];
 
   return (
@@ -54,6 +54,44 @@ const Navigation = () => {
                 </Link>
               </li>
             ))}
+
+            <li className="navigation__item navigation__item--account"
+              onMouseEnter={() => setIsAccountOpen(true)}
+              onMouseLeave={() => setIsAccountOpen(false)}
+            >
+              <button
+                className={`navigation__link ${isAccountOpen ? 'navigation__link--active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', fontFamily: 'var(--font-body)', fontWeight: 500, padding: '12px 0' }}
+              >
+                My Account
+              </button>
+
+              {isAccountOpen && (
+                <div className="navigation__dropdown">
+                  {(() => {
+                    const isSignedIn = false;
+
+                    if (isSignedIn) {
+                      return (
+                        <div className="navigation__dropdown-content">
+                          <Link to="/account" className="navigation__dropdown-item">Full Account</Link>
+                          <Link to="/orders" className="navigation__dropdown-item">Orders</Link>
+                          <Link to="/settings" className="navigation__dropdown-item">Settings</Link>
+                          <button className="navigation__dropdown-item navigation__dropdown-logout">Sign Out</button>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="navigation__dropdown-content">
+                          <p className="navigation__dropdown-text">You must be signed in to access your account.</p>
+                          <Link to="/signin" className="navigation__dropdown-btn">Sign In</Link>
+                        </div>
+                      );
+                    }
+                  })()}
+                </div>
+              )}
+            </li>
           </ul>
 
           {/* Auth Buttons */}

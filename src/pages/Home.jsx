@@ -9,6 +9,7 @@ import FeaturedProducts from '../components/sections/FeaturedProducts';
 import CategoryGrid from '../components/sections/CategoryGrid';
 import AISkinAdvisor from '../components/sections/AISkinAdvisor';
 import Testimonials from '../components/sections/Testimonials';
+import ContactForm from '../components/sections/ContactForm';
 import './Home.css';
 
 const Home = () => {
@@ -23,8 +24,10 @@ const Home = () => {
       <CategoryGrid />
       <AISkinAdvisor />
       <Testimonials />
+      <ContactForm />
     </main>
   );
 };
 
 export default Home;
+

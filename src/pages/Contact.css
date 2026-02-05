@@ -5,6 +5,8 @@
 
 .contact-page {
   background-color: var(--color-white);
+  padding-top: 100px;
+  min-height: 100vh;
 }
 
 /* Hero Section */
@@ -67,12 +69,10 @@
 }
 
 /* Contact Form Card - Royal Red */
-.contact-content__grid > div:first-child .luxury-card--white {
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+.contact-content__grid>div:first-child .luxury-card--white {
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border: none;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(89, 9, 12, 0.25);
@@ -162,11 +162,9 @@
 }
 
 .contact-info .luxury-card--beige {
-  background: linear-gradient(
-    135deg,
-    var(--color-deep-crimson) 0%,
-    var(--color-dark-ruby) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-deep-crimson) 0%,
+      var(--color-dark-ruby) 100%);
   border: none;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(89, 9, 12, 0.2);
